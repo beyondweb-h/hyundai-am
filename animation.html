@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>애니메이션 현대첨단소재 Hyundai Advanced Materials</title>
+  <style>
+    * {
+      padding: 0;
+      margin: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Poppins', 'Pretendard Variable', sans-serif;
+    }
+    .container, .container-s {
+      margin: 30px 0;
+      background-color: #ccc;
+      overflow: hidden;
+    }
+    .txt {
+      font-size: 86px;
+      font-weight: bold;
+      animation: mask-slogan-ani 4s both infinite;
+    }
+    .txt-s {
+      font-size: 20px;
+      animation: mask-slogan-s-ani 4s both infinite;
+    }
+    .scroll {
+      position: fixed;
+      right: 100px;
+      top: 20%;
+      width: 100px;
+      height: 100px;
+      background-color: #000;
+    }
+    .emblem {
+      width: 100%;
+      height: 100%;
+      background: url('../images/scroll_down.svg') center center / contain no-repeat;
+      animation: rotate-ani 4s linear infinite;
+    }
+    .mouse {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      width: 22px;
+      height: 40px;
+      border-radius: 11px;
+    }
+    .mouse:before { /* 마우스 안쪽 도형 마스크 */
+      position: absolute;
+      inset: 0; /* left, top, right, bottom 모두 0, 너비와 높이를 100% 설계한 것과 동일 */
+      padding: 2px;
+      border-radius: inherit;
+      background-image: linear-gradient(to bottom, rgba(255,255,255,1) 50%, rgba(255,255,255,0.3) 51%);
+      background-size: auto 200%;
+      -webkit-mask: linear-gradient(#f00 0 0) content-box, linear-gradient(#f00 0 0);
+      mask: linear-gradient(#f00 0 0) content-box, linear-gradient(#f00 0 0);
+      -webkit-mask-composite: xor;
+      mask-composite: exclude;
+      content: '';
+      transform: translate(-50%, -50%);
+      animation: mouse-line-ani 1.2s alternate infinite;
+    }
+    .mouse:after { /* 동그라미 위아래 마이크로 모션 */
+      position: absolute;
+      left: 50%;
+      top: 15%;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      content: '';
+      background-color: #fff;
+      transform: translateX(-50%);
+      animation: mouse-dot-ani 1.2s;
+      animation-direction: alternate; /* 왕복 */
+      animation-iteration-count: infinite; /* 2회 반복하려면 반복회수 4*/
+    }
+
+    /* 애니메이션 */
+    @keyframes mask-slogan-ani {
+      from {transform: translateY(100%); opacity: 0;}
+      25% {transform: translateY(0); opacity: 1;}
+      75% {transform: translateY(0); opacity: 1;}
+      to {transform: translateY(100%); opacity: 0;}
+    }
+    @keyframes mask-slogan-s-ani {
+      from {transform: translateY(100%); opacity: 0;}
+      25% {transform: translateY(100%); opacity: 0;}
+      50% {transform: translateY(0); opacity: 1;}
+      75% {transform: translateY(0); opacity: 1;}
+      to {transform: translateY(100%); opacity: 0;}
+    }
+    @keyframes rotate-ani {
+      from {transform: rotate(0deg);}
+      to {transform: rotate(360deg);}
+    }
+    @keyframes mouse-dot-ani {
+      from {top: 15%; width: 6px; height: 6px; opacity: 1;}
+      to {top: 80%; width: 3px; height: 3px; opacity: 0.3;}
+    }
+    @keyframes mouse-line-ani {
+      from {background-position: 0 -2px;}
+      to {background-position: 0 calc(100% + 2px);}
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="txt">Creating New Future</div>
+  </div>
+  <div class="container-s">
+    <div class="txt-s">무한한 가능성으로 새로운 미래를 만듭니다.</div>
+  </div>
+  <div class="scroll">
+    <div class="emblem"></div>
+    <div class="mouse"></div>
+  </div>
+</body>
+</html> 

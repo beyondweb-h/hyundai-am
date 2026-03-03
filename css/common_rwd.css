@@ -1,0 +1,112 @@
+@charset 'utf-8';
+/* 1. mo tiny */
+@media screen and (max-width: 360px) {
+  html {
+    font-size: 9px;
+  }
+  .ft-qr img {
+    width: 4.8rem;
+  }
+}
+
+/* 2. mo */
+@media screen and (max-width: 767px) {}
+
+/* 3. tb~ */
+@media screen and (min-width: 768px) {
+  
+}
+
+/* 4. only tb */
+@media screen and (min-width: 768px) and (max-width: 1279px) {}
+
+/* 5. laptop 1280~ */
+@media screen and (min-width: 1280px) {
+  html {
+    font-size: 12px;
+  }
+  #hd-header {
+    height: 9rem;
+  }
+  .logo {
+    width: 14rem;
+  }
+  #hd-gnb {
+    display: block;
+  }
+  .depth1 {
+    width: 14rem;
+  }
+  .util-menu *:before {
+    font-size: 2.6rem;
+  }
+  .ft-wrap {
+    padding-bottom: 6rem;
+  }
+  .ft-info {
+    display: flex;
+    gap: 4rem;
+  }
+  .ft-qr {
+    top: 0;
+    bottom: inherit;
+  }
+  .ft-qr img {
+    width: 8rem;
+  }
+  .gototop {
+    top: inherit;
+    bottom: 0;
+  }
+  .copy br {
+    display: none;
+  }
+
+  .whitebox {
+    height: inherit;
+    width: 90%;
+    max-width: 180rem;
+    padding: 6rem 4rem;
+  }
+  .close-btn {
+    right: 4rem;
+    top: 2rem;
+  }
+  .sm-mo-gnb {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  .sm-depth1 {
+    width: 31%;
+    padding: 3rem;
+  }
+  .last {
+    display: block;
+    background: var(--primary-color) url('../images/logoWh.svg') center center /60% no-repeat;
+  }
+  .sm-depth2 {
+    display: flex;
+    flex-wrap: wrap;
+    font-size: 1.6rem;
+  }
+  .sm-depth2 li {
+    width: 50%;
+  }
+}
+
+/* 5. laptop 1440~ */
+@media screen and (min-width: 1440px) {
+  .wrap {
+    padding: 0 8rem;
+  }
+  .header-container {
+    padding: 0 4rem;
+  }
+  .util-menu {
+    gap: 2rem;
+  }
+}
+
+/* 6. laptop 1921~ */
+@media screen and (min-width: 1921px) {}
