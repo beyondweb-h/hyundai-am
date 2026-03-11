@@ -27,7 +27,8 @@
   box-sizing: border-box;
 }
 html {
-  scroll-behavior: smooth;
+  /* 부드러운 스크롤 플러그인(Lenis) 사용시 사용금지 */
+  /* scroll-behavior: smooth; */
   font-size: 10px;
 }
 body {
@@ -182,7 +183,7 @@ input:focus, button:focus {
 /* 4. 영역별 디자인 */
 /* 4.1 헤더 */
 #hd-header {
-  position: fixed;
+  position: absolute;
   left: 0;
   top: 0;
   display: flex;
@@ -191,6 +192,10 @@ input:focus, button:focus {
   width: 100%;
   height: 6rem;
   z-index: 100;
+}
+#hd-header.fixed {
+  position: fixed;
+  top: 0;
 }
 #hd-header a {
   transition: var(--speed);
@@ -317,13 +322,13 @@ input:focus, button:focus {
 }
 
 /* 다크모드일 때 */
-.dark-mode #hd-header {
+#hd-header.dark-mode  {
   color: #fff;
 }
-.dark-mode #hd-header a, .dark-mode #hd-header button {
+#hd-header.dark-mode  a, #hd-header.dark-mode  button {
   color: #fff;
 }
-.dark-mode #hd-header .logo a {
+#hd-header.dark-mode  .logo a {
   background-image: url('../images/logoWh.svg');
 }
 

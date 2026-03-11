@@ -1,7 +1,15 @@
 $(document).ready(function(){
   //변수선언
   const body ="body";
-  let viewportW, viewportH;
+  const hd = "#hd-header";
+  const ft = "#hd-footer";
+  let bodyHeight = $(body).height();
+  let viewportW = window.innerWidth;
+  let viewportH = window.innerHeight;
+  let scTop = $(window).scrollTop(); //화면이 스크롤되는 양
+  let hdHeight = $(hd).height();
+  let ftHeight = $(ft).height();
+  let ftTop = $(ft).offset().top;
   const mainMenu = ".depth1";
   const subMenu = ".depth2";
   let speed = 300;
@@ -14,11 +22,38 @@ $(document).ready(function(){
   const smMainMenu = ".sm-depth1 > a";
   const smSubMenu = ".sm-depth2";
 
+  // 부드러운 스크롤
+  const lenis = new Lenis();
+  function raf(time) {
+    lenis.raf(time);
+    requestAnimationFrame(raf);
+  }
+
+  requestAnimationFrame(raf);   
+
   // 반응형 구현
   rwd();
   $(window).resize(function(){
     rwd();
     smReset();
+    bodyHeight = $(body).height();
+    hdHeight = $(hd).height();
+    ftHeight = $(ft).height();
+  });
+
+  $(window).scroll(function(){
+    scTop = $(window).scrollTop(); //화면이 스크롤되는 양 업데이트
+    if(scTop > hdHeight){ //화면에서 헤더가 보이지 않을 정도로 문서가 스크롤되면
+      $(hd).addClass("fixed");
+    }else {
+      $(hd).removeClass("fixed");
+    }
+    //푸터가 화면에 다 보일 때쯤 헤더감추기
+    // if(scTop > bodyHeight - viewportH - 100) {
+    //   $(hd).fadeOut(speed);
+    // } else { 
+    //   $(hd).fadeIn(speed);
+    // }
   });
   
 
@@ -85,4 +120,7 @@ $(document).ready(function(){
   function smReset() {
     $(smSubMenu).attr("style", "");
   }
+
+  
+
 });
