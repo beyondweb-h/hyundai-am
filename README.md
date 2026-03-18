@@ -1,12 +1,12 @@
 # 📚 [강의명] UI 디자인 & 프론트엔드 애니메이션
-> **UI 디자인 실무와 After Effects, GSAP를 활용한 인터랙티브 웹 제작 과정**
+> **UI 디자인 실무와 Premierre, After Effects를 활용한 인터랙티브 웹 제작 과정**
 
 ---
 
 ## 📅 강의 개요
 - **강사:** [이름/강사명]
 - **강의 일정:** 2026.03.11 ~ [종료일] (매주 [요일])
-- **강의 도구:** Figma, After Effects, VS Code (React, GSAP)
+- **강의 도구:** Figma, After Effects, VS Code (React)
 
 ## 🎯 학습 목표
 1. **Figma**를 활용한 고도화된 UI/UX 프로토타이핑
