@@ -1,0 +1,69 @@
+--index.html </body>전에 삽입--
+  <nav id="pf-gnb-hor">
+    <a href="#Main" data-menuanchor="home"><span class="label">Main</span></a>
+    <a href="#Product" data-menuanchor="portfolio" class="active"><span class="label">Product</span></a>
+    <a href="#ESG" data-menuanchor="profile"><span class="label">ESG</span></a>
+    <a href="#News" data-menuanchor="contact"><span class="label">News</span></a>
+    <a href="#Career" data-menuanchor="contact"><span class="label">Career</span></a>
+  </nav>
+
+
+
+--main.css 풀페이지 주석 밑에 삽입--
+/* 풀페이지 */
+#pf-gnb-hor {
+  position: fixed;
+  left: 40px;
+  bottom: 40px;
+  display: flex;
+  gap: 20px;
+}
+#pf-gnb-hor a {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #f0f0f0;
+}
+#pf-gnb-hor a:before {
+  content: '';
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: #f0f0f0;
+}
+#pf-gnb-hor a:first-child:before {
+  width: 28px;
+  height: 28px;
+  background: url('../images/home_wh.svg') center center / cover no-repeat;
+}
+#pf-gnb-hor a:after {
+  content: '';
+  width: 24px;
+  height: 1px;
+  background-color: #f0f0f0;
+  display: none;
+}
+#pf-gnb-hor a.active {
+  color: var(--primary-color);
+}
+#pf-gnb-hor a.active:before, #pf-gnb-hor a.active:after {
+  display: block;
+  background-color: var(--primary-color);
+}
+#pf-gnb-hor a .label {
+  display: none;
+}
+#pf-gnb-hor a.active .label {
+  display: block;
+}
+
+--main.js수정--
+  navigation: true,
+  navigationTooltips: ["Main","Product","ESG","News","Career"],
+  navigationPosition: "left",
+  --여기까지 삭제
+  menu: "#fp-nav-hor",
+  anchors: ["Main","Product","ESG","News","Career"]
+  --위의 두 줄 삽입

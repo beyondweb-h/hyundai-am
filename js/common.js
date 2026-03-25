@@ -1,6 +1,6 @@
 $(document).ready(function(){
   //변수선언
-  const body ="body";
+  const body = "body";
   const hd = "#hd-header";
   const ft = "#hd-footer";
   let bodyHeight = $(body).height();
@@ -13,6 +13,7 @@ $(document).ready(function(){
   const mainMenu = ".depth1";
   const subMenu = ".depth2";
   let speed = 300;
+  
   // 사이트맵, 모바일 GNB구현
   const sitemap =".sitemap";
   const familySite =".family-site";
@@ -21,15 +22,6 @@ $(document).ready(function(){
   const closeBtn = ".close-btn";
   const smMainMenu = ".sm-depth1 > a";
   const smSubMenu = ".sm-depth2";
-
-  // 부드러운 스크롤
-  const lenis = new Lenis();
-  function raf(time) {
-    lenis.raf(time);
-    requestAnimationFrame(raf);
-  }
-
-  requestAnimationFrame(raf);   
 
   // 반응형 구현
   rwd();
@@ -41,20 +33,14 @@ $(document).ready(function(){
     ftHeight = $(ft).height();
   });
 
-  $(window).scroll(function(){
-    scTop = $(window).scrollTop(); //화면이 스크롤되는 양 업데이트
-    if(scTop > hdHeight){ //화면에서 헤더가 보이지 않을 정도로 문서가 스크롤되면
-      $(hd).addClass("fixed");
-    }else {
-      $(hd).removeClass("fixed");
-    }
-    //푸터가 화면에 다 보일 때쯤 헤더감추기
-    // if(scTop > bodyHeight - viewportH - 100) {
-    //   $(hd).fadeOut(speed);
-    // } else { 
-    //   $(hd).fadeIn(speed);
-    // }
-  });
+  // $(window).scroll(function(){
+  //   scTop = $(window).scrollTop(); //화면이 스크롤되는 양 업데이트
+  //   if(scTop > hdHeight){ //화면에서 헤더가 보이지 않을 정도로 문서가 스크롤되면
+  //     $(hd).addClass("fixed");
+  //   }else {
+  //     $(hd).removeClass("fixed");
+  //   }
+  // });
   
 
   // lang-btn 클릭 시 lang-list show

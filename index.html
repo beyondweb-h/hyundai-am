@@ -4,21 +4,17 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>현대첨단소재</title>
+  <link rel="stylesheet" href="css/fullpage.min.css">
   <link rel="stylesheet" href="css/common.css">
   <link rel="stylesheet" href="css/common_rwd.css">
   <link rel="stylesheet" href="css/main.css">
   <script src="js/jquery-1.12.4.min.js"></script>
   <script src="js/jquery-ui.min.js"></script>
-  <script src="js/lenis.min.js"></script>
+  <script src="js/fullpage.min.js"></script>
   <script src="js/common.js"></script>
   <script src="js/main.js"></script>
 </head>
 <body>
-  <!-- 1. 기본구조 생성
-  2. 헤더세팅(title, common.css연결)
-  3. webfonts.css 열어서 커스터마이징
-  4. common.css수정
-  5. header#hd-header, div(main)#hd-main, footer#hd-footer -->
   <header id="hd-header" class="dark-mode">
     <div class="header-container wrap">
       <h1 class="logo">
@@ -92,7 +88,8 @@
     </div>
   </header>
   <div id="hd-main">
-    <section class="main-section main-section-visual wh">
+
+    <section class="section main-section main-section-visual wh">
       <h2 class="sound-only">메인 비주얼</h2>
       <div class="main-container visual-container">
         <ol class="visual-slider">
@@ -142,7 +139,7 @@
       </div>
     </section>
 
-    <section class="main-section main-section-product">
+    <section class="section main-section main-section-product">
       <h2 class="sound-only">제품</h2>
       <div class="main-container product-container wrap">
         <div class="product-overview">
@@ -194,7 +191,7 @@
       </div>
     </section>
 
-    <section class="main-section main-section-esg wh">
+    <section class="section main-section main-section-esg wh">
       <h2 class="sound-only">지속가능경영</h2>
       <div class="main-container esg-container wrap">
         <div class="h3-group">
@@ -236,7 +233,7 @@
       </div>
     </section>
 
-    <section class="main-section main-section-news">
+    <section class="section main-section main-section-news">
       <h2 class="sound-only">뉴스</h2>
       <div class="main-container news-container wrap">
         <div class="h3-group">
@@ -270,7 +267,7 @@
       </div>
     </section>
 
-    <section class="main-section main-section-cs wh">
+    <section class="section main-section main-section-cs wh fp-auto-height">
       <h2 class="sound-only">고객상담과 인재채용</h2>
       <div class="main-container cs-container">
         <div class="cs-item cs-center">
@@ -295,6 +292,8 @@
         </div>
       </div>
     </section>
+
+
   </div>
   <footer id="hd-footer">
     <div class="footer-container wrap">
@@ -385,5 +384,12 @@
     <button class="close-btn icon-btn"><span class="sound-only">닫기</span></button>
     패밀리사이트
   </div>
+  <nav id="pf-gnb-hor">
+    <a href="#Main" data-menuanchor="Main" class="active"><span class="label">Main</span></a>
+    <a href="#Product" data-menuanchor="Product"><span class="label">Product</span></a>
+    <a href="#Sustainability" data-menuanchor="Sustainability"><span class="label">Sustainability</span></a>
+    <a href="#News" data-menuanchor="News"><span class="label">News</span></a>
+    <a href="#Career" data-menuanchor="Career"><span class="label">Career</span></a>
+  </nav>
 </body>
 </html>

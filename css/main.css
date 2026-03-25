@@ -453,6 +453,9 @@
 
 /* 3. tb~ 보통 사이즈*/
 @media screen and (min-width: 768px) {
+  .main-section {
+    padding: 0;
+  }
   .txt {
     font-size: 5.4rem;
   }
@@ -461,6 +464,7 @@
     margin-left: auto;
     margin-right: auto;
   }
+   
   .esg-container {
     display: flex;
     flex-direction: column-reverse;
@@ -513,10 +517,7 @@
   }
   .product-item {
     margin: 0;
-    width: 49%;
-  }
-  .product-item:nth-child(2n) {
-    margin-top: 6rem;
+    width: 23.5%;
   }
   .cs-container {
     display: flex;
@@ -533,9 +534,6 @@
 
 /* 5. laptop 1280~ */
 @media screen and (min-width: 1280px) {
-  .main-section {
-    padding: 8rem 0;
-  } 
   .main-section-visual, .main-section-cs {
     padding: 0;
   }
@@ -600,9 +598,6 @@
 
 /* 5. laptop 1440~ */
 @media screen and (min-width: 1440px) {
-  .main-section {
-    padding: 14rem 0;
-  }
   .main-section-visual, .main-section-cs {
     padding: 0;
   }
@@ -612,15 +607,6 @@
   .product-overview p:first-child {
     font-size: 4.4rem;
   }
-  .product-contents {
-    gap: 6%;
-  }
-  .product-item {
-    width: 47%;
-  }
-  .product-item:nth-child(2n) {
-    margin-top: 8rem;
-  }
   .esg-container .h3-group {
     padding-left: 30%;
   }
@@ -628,6 +614,67 @@
 
 /* 6. laptop 1921~ */
 @media screen and (min-width: 1921px) {}
+
+
+/* 풀페이지 */
+#pf-gnb-hor {
+  position: fixed;
+  left: 40px;
+  bottom: 40px;
+  display: flex;
+  gap: 20px;
+}
+#pf-gnb-hor a {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #f0f0f0;
+}
+#pf-gnb-hor a:before { /* 동그라미 */
+  content: '';
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: #f0f0f0;
+}
+#pf-gnb-hor a:first-child:before { /* 홈 아이콘 */
+  width: 28px;
+  height: 28px;
+  border-radius: 0;
+  background: url('../images/home_wh.svg') center center / cover no-repeat;
+}
+#pf-gnb-hor a:after { /* 가로선 */
+  content: '';
+  width: 24px;
+  height: 1px;
+  background-color: #f0f0f0;
+  display: none;
+}
+#pf-gnb-hor a.active:before, #pf-gnb-hor a.active:after {
+  display: block;
+}
+#pf-gnb-hor a:first-child.active:before {
+  background-color: transparent;
+}
+#pf-gnb-hor a .label {
+  display: none;
+}
+#pf-gnb-hor a.active .label {
+  display: block;
+}
+#pf-gnb-hor.light a:first-child:before {
+  background-image: url('../images/home.svg');
+}
+#pf-gnb-hor.light a.active .label {
+  color: var(--primary-color);
+}
+#pf-gnb-hor.light a.active:after {
+  background-color: var(--primary-color);
+}
+
+
 
 
 /* 애니메이션 */
