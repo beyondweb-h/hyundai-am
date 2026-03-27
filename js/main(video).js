@@ -1,21 +1,26 @@
-$(function(){
+$(function () {
   const visualBtn = ".visual-pagination button";
   const vSlide = ".v-slide";
   let activeNum = 0;
-  $(visualBtn).click(function(){
+
+  // 2번 버튼을 클릭하면 visualWrap의 left좌표가 -100%
+  $(visualBtn).click(function () {
     // 비주얼 페이지 버튼 초기화
     $(visualBtn).removeClass("active");
     $(this).addClass("active");
 
     activeNum = $(this).data("index");
+    // "" 안에 들어가면 무조건 문자로 인식 없으면 상수로 인식 / () 안에 "" 안에 들어가는 값은 상수로 들어감.
     // 모든 슬라이드 초기화
     $(vSlide).removeClass("active prev");
-    $(vSlide).each(function(){
+    $(vSlide).each(function () {
       const video = $(this).find("video").get(0);
       video.pause();
       video.currentTime = 0;
+      // currentTime = video에 할당된 속성으로 값을 대입할 것
       const slideIndex = $(this).data("index");
-      if(slideIndex < activeNum){
+      // const는 한 번 지정 후 다시 변수 지정하면 에러남
+      if (slideIndex < activeNum) {
         $(this).addClass("prev");
       }
     });
@@ -26,5 +31,6 @@ $(function(){
 
     let video = currentSlide.find("video").get(0);
     video.play();
+
   });
 });
