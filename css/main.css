@@ -8,48 +8,25 @@
 }
 .main-section-visual {}
 .main-container {}
-.visual-container {
+.visual-container { /* swiper */
   position: relative;
   width: 100%;
   height: 100vh;
   padding: 0;
   color: #fff;
 }
-.visual-slider {
-  position: relative; 
-  width: 100%; 
-  height: 100%; 
-  overflow: hidden;
-}
-.v-slide:after {
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  content: '';
-  background-color: #000;
-  opacity: 0.25;
-}
-.v-slide:nth-child(3):after {
-  background-color: var(--primary-color);
-  opacity: 0.75;
-}
 .v-slide {
+  position: relative;
+}
+.v-slide:before {
   position: absolute;
-  left: 100%; /* 전체 슬라이드는 화면 오른쪽으로 기본값 지정 */
-  top: 0;
-  width: 100%;
-  height: 100%;
-  transition: 0.6s;
-}
-.v-slide.active { /* 화면에 보이는 슬라이드 */
   left: 0;
-  z-index: 1;
-}
-.v-slide.prev { /* 화면에 보이는 슬라이드 이전 슬라이드 */
-  left: -100%;
-  z-index: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #000;
+  opacity: 0.3;
+  content: '';
 }
 .v-slide video {
   width: 100%;
@@ -80,10 +57,10 @@
   opacity: 0;
 }
 .animate .txt {
-  animation: mask-slogan-ani 4s both infinite;
+  animation: mask-slogan-ani 7s both;
 }
 .animate .txt-s{
-  animation: mask-slogan-s-ani 4s both infinite;
+  animation: mask-slogan-s-ani 7s both;
 }
 .visual-pagination {
   position: absolute;
@@ -446,6 +423,11 @@
 
 /* 2. mo */
 @media screen and (max-width: 767px) {
+  .swiper-horizontal>.swiper-pagination-bullets, 
+  .swiper-pagination-bullets.swiper-pagination-horizontal, 
+  .swiper-pagination-custom, .swiper-pagination-fraction {
+    display: none;
+  }
   .esg-container {
     max-width: 48rem;
   }
@@ -530,6 +512,11 @@
 /* 4. only tb */
 @media screen and (min-width: 768px) and (max-width: 1279px) {
   .main-container {}
+  .swiper-horizontal>.swiper-pagination-bullets, 
+  .swiper-pagination-bullets.swiper-pagination-horizontal, 
+  .swiper-pagination-custom, .swiper-pagination-fraction {
+    left: 1rem !important;
+  }
 }
 
 /* 5. laptop 1280~ */
@@ -539,9 +526,6 @@
   }
   .txt {
     font-size: 7.5rem;
-  }
-  .visual-pagination {
-    padding-left: 9.6rem;
   }
   .scroll {
     right: 9.6rem;
@@ -680,15 +664,15 @@
 /* 애니메이션 */
 @keyframes mask-slogan-ani {
   from {transform: translateY(100%); opacity: 0;}
-  25% {transform: translateY(0); opacity: 1;}
-  75% {transform: translateY(0); opacity: 1;}
+  20% {transform: translateY(0); opacity: 1;}
+  80% {transform: translateY(0); opacity: 1;}
   to {transform: translateY(100%); opacity: 0;}
 }
 @keyframes mask-slogan-s-ani {
   from {transform: translateY(100%); opacity: 0;}
-  25% {transform: translateY(100%); opacity: 0;}
+  20% {transform: translateY(100%); opacity: 0;}
   50% {transform: translateY(0); opacity: 1;}
-  75% {transform: translateY(0); opacity: 1;}
+  80% {transform: translateY(0); opacity: 1;}
   to {transform: translateY(100%); opacity: 0;}
 }
 @keyframes rotate-ani {
@@ -702,4 +686,27 @@
 @keyframes mouse-line-ani {
   from {background-position: 0 100%;}
   to {background-position: 0 0;}
+}
+
+/* 스와이퍼 디자인 커스터마이징 */
+.swiper-horizontal>.swiper-pagination-bullets, 
+.swiper-pagination-bullets.swiper-pagination-horizontal, 
+.swiper-pagination-custom, .swiper-pagination-fraction {
+  left: 10rem;
+  bottom: calc(50% + 5rem);
+  top: inherit;
+  width: auto;
+}
+.swiper-pagination-bullet {
+  display: inline-block;
+  width: 1.2rem;
+  height: 1.2rem;
+  margin: 0.6rem !important;
+  border-radius: 0.6rem;
+  background: #fff;
+  opacity: 1;
+  transition: 0.3s;
+}
+.swiper-pagination-bullet-active {
+  width: 6.4rem;
 }

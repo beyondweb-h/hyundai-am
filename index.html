@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>현대첨단소재</title>
   <link rel="stylesheet" href="css/fullpage.min.css">
+  <link rel="stylesheet" href="css/swiper-bundle.min.css">
   <link rel="stylesheet" href="css/common.css">
   <link rel="stylesheet" href="css/common_rwd.css">
   <link rel="stylesheet" href="css/main.css">
@@ -12,6 +13,7 @@
   <script src="js/jquery-ui.min.js"></script>
   <script src="js/lenis.min.js"></script>
   <script src="js/fullpage.min.js"></script>
+  <script src="js/swiper-bundle.min.js"></script>
   <script src="js/common.js"></script>
   <script src="js/main.js"></script>
 </head>
@@ -92,10 +94,10 @@
 
     <section class="section main-section main-section-visual wh">
       <h2 class="sound-only">메인 비주얼</h2>
-      <div class="main-container visual-container">
-        <ol class="visual-slider">
-          <li class="v-slide active" data-index="0">
-            <video src="images/main01.mp4" autoplay muted loop></video>
+      <div class="main-container visual-container swiper">
+        <ol class="visual-slider swiper-wrapper">
+          <li class="swiper-slide v-slide active" data-index="0">
+            <video src="images/main01.mp4" muted playsinline autoplay></video>
             <div class="v-txt animate">
               <div class="container">
                 <div class="txt">Creating New Future</div>
@@ -105,34 +107,37 @@
               </div>
             </div>
           </li>
-          <li class="v-slide" data-index="1">
-            <video src="images/main02.mp4" muted loop></video>
+          <li class="swiper-slide v-slide" data-index="1">
+            <video src="images/main02.mp4" muted playsinline></video>
             <div class="v-txt">
               <div class="container">
-                <div class="txt">Creating New Future</div>
+                <div class="txt">Green Materials</div>
               </div>
               <div class="container-s">
-                <div class="txt-s">무한한 가능성으로 새로운 미래를 만듭니다.</div>
+                <div class="txt-s">지구를 위한 자연을 품은 소재를 만듭니다.</div>
               </div>
             </div>
           </li>
-          <li class="v-slide" data-index="2">
-            <video src="images/main03.mp4" muted loop></video>
+          <li class="swiper-slide v-slide" data-index="2">
+            <video src="images/main03.mp4" muted playsinline></video>
             <div class="v-txt">
               <div class="container">
-                <div class="txt">Creating New Future</div>
+                <div class="txt">Begin with Our Technology</div>
               </div>
               <div class="container-s">
-                <div class="txt-s">무한한 가능성으로 새로운 미래를 만듭니다.</div>
+                <div class="txt-s">차별화된 솔루션, 우리의 기술에서 시작됩니다.</div>
               </div>
             </div>
           </li>
         </ol>
-        <div class="visual-pagination">
+        <div class="swiper-pagination"></div>
+        <!-- <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div> -->
+        <!-- <div class="visual-pagination">
           <button data-index="0" class="active">1</button>
           <button data-index="1">2</button>
           <button data-index="2">3</button>
-        </div>
+        </div> -->
         <div class="scroll">
           <div class="emblem"></div>
           <div class="mouse"></div>

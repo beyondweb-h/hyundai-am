@@ -119,4 +119,60 @@ $(function () {
       });
     }
   }
+
+  // 히어로 영역
+  // swiper 플러그인
+  const swiper = new Swiper('.swiper', {
+    effect: "fade",
+    loop: true,
+    speed: 600,
+    // autoplay: {
+    //   delay: 7000, //영상의 길이(duration)가 7s
+    //   disableOnInteraction: false,
+    // },  
+    pagination: {
+      el: '.swiper-pagination',
+      clickable: true,
+    },
+    // navigation: {
+    //   nextEl: '.swiper-button-next',
+    //   prevEl: '.swiper-button-prev',
+    // },
+  });
+
+  //영상 끝나면 넘기기
+  const videos = document.querySelectorAll('.swiper-slide video');
+  videos.forEach((video) => {
+    video.addEventListener('ended', () => {
+      swiper.slideNext();
+    });
+  });
+
+  swiper.on('slideChangeTransitionEnd', () => {
+    document.querySelectorAll('.swiper-slide video').forEach(video => {
+      if (video.closest('.swiper-slide').classList.contains('swiper-slide-active')) {
+        video.play().catch(() => {});
+      } else {
+        video.pause();
+        video.currentTime = 0;
+      }
+    });
+
+    // 현재 슬라이드의 텍스트 애니메이션 재생
+    const activeSlide = document.querySelector('.swiper-slide-active');
+
+    // 해당 슬라이드 안 요소만 실행
+    activeSlide.querySelectorAll('.v-txt').forEach(el => {
+      // reflow (애니메이션 재실행 핵심)
+      void el.offsetWidth;
+
+      el.classList.add('animate');
+    });
+
+  });
+
+
+  
 }); // 전체 제이쿼리
+
+
